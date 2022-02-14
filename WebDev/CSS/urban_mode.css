@@ -1,0 +1,29 @@
+.reminder {
+    padding: 2px 25px;
+}
+
+.reminder_box {
+    background-color: var(--dark_grey);
+    text-align: center;
+    /* border: 5px solid black; */
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 30px 10px;
+}
+
+.reminder_text {
+    color: white;
+    padding: 0 20px;
+}
+
+.reminder_button {
+    background-color: var(--dark_blue_background);
+    border-radius: 15px;
+    padding: 0 20px;
+}
+
+.reminder_button a:link {
+    color: white;
+}

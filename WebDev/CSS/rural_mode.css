@@ -1,0 +1,73 @@
+.recommendations {
+    width: 90%;
+    text-align: center;
+}
+
+.recommendations_title {
+    color: black;
+    font-size: 4em;
+    margin: 40px 0 0 0;
+    padding: 0 0 20px 0;
+    border-bottom: 4px solid black;
+}
+
+.recommendations_box {
+    background-color: var(--light_grey);
+    border: 5px solid black;
+}
+
+.reccomendation_tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommendation_tab {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.recommendation_tab_active h2 {
+    color: var(--green);
+}
+
+.recommendation_tab_active .recommendation_tab_line {
+    height: 10px;
+    width: 100%;
+    background-color: var(--green);
+}
+
+.recommendation_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.recommendation_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--green);
+    width: 90%;
+    margin: 10px 0;
+}
+
+.recommendation_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.recommendation_image {
+    width: 250px;
+    height: 250px;
+}
+
+.recommendation_image img {
+    width: 100%;
+}
