@@ -118,9 +118,9 @@ class OBD2_Simulator:
         self.trip_times = np.zeros(num_trips, dtype = np.int32)
         self.office_trips = np.zeros(num_trips, dtype = bool)
         if(num_trips >= 2):
-            self.trip_times[0] = int(np.random.normal(9 * 60, 0.5 * 60))
+            self.trip_times[0] = int(np.random.normal(9 * 60, 1 * 60))
             self.office_trips[0] = True
-            self.trip_times[1] = int(np.random.normal(17 * 60, 0.5 * 60))
+            self.trip_times[1] = int(np.random.normal(17 * 60, 1 * 60))
             self.office_trips[1] = True
             if(num_trips > 2):
                 remaining_trip_times = np.random.uniform(18 * 60, 22 * 60, num_trips - 2)
@@ -172,11 +172,14 @@ for sim_iter in np.arange(NUM_SIMS):
     fuel_data.extend([(x + 24 * 60 * sim_iter) / (24 * 60) for x in obd2_sim.refuels])
 
 fuel_cost = obd2_sim.total_fuel_cost
-
 print("Done")
-print(fuel_data)
-print(fuel_cost)
-# np.save(open('./speed_time_series_data.npy', 'wb'), speed_data)
+
+with open('./OBD2_Simulator/Simulated_Data/fuel_info.txt', 'w') as read_file:
+    read_file.write(f"{fuel_cost:.2f}\n")
+    for refuel_time in fuel_data:
+        read_file.write(f"{refuel_time}\n")
+sampled_idx = [x for x in np.arange(24 * 60) if x % 5 == 0]
+np.save(open('./OBD2_Simulator/Simulated_Data/speed_time_series_data.npy', 'wb'), speed_data[:, sampled_idx])
 
 
 

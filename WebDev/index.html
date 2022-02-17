@@ -4,6 +4,8 @@
 <head>
     <title>The Rurban Traveller</title>
 
+    <!-- <meta http-equiv="refresh" content="10"> -->
+
     <!-- Importing CSS files -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" /> 
     <link rel="stylesheet" type="text/css" href="./CSS/header.css">
@@ -32,7 +34,7 @@
                     <h1>Routine Mode</h1>
                 </div>
                 <div class="features">
-                    <div class="reminder">
+                    <div class="reminder" id="reminder_div">
                         <div class="reminder_box">
                             <div class="reminder_button">
                                 <a href="#">
@@ -40,8 +42,7 @@
                                 </a>
                             </div>
                             <!-- Dynamic Reminder Text -->
-                            <h2 class="reminder_text">
-                                Ready to go to work at 3:30?<br>Look at your reminders -
+                            <h2 class="reminder_text" id="reminder_text">
                             </h2>
                         </div>
                     </div>
@@ -82,43 +83,27 @@
                         <div class="recommendations_box">
                             <h1 class="recommendations_title">Explore More!</h1>
                             <div class="reccomendation_tabs">
-                                <div class="recommendation_tab recommendation_tab_active">
+                                <div class="recommendation_tab recommendation_tab_active" id="recommendation_tab1" onclick="select_tab1()">
                                     <!-- Dynamic Tab Names -->
-                                    <h2>Trekking</h2>
+                                    <h2 id="recommendation_tab_title1"></h2>
                                     <div class="recommendation_tab_line"></div>
                                 </div>
-                                <div class="recommendation_tab">
+                                <div class="recommendation_tab" id="recommendation_tab2" onclick="select_tab2()">
                                     <!-- Dynamic Tab Names -->
-                                    <h2>Kayaking</h2>
+                                    <h2 id="recommendation_tab_title2"></h2>
                                     <div class="recommendation_tab_line"></div>
                                 </div>
-                                <div class="recommendation_tab">
+                                <div class="recommendation_tab" id="recommendation_tab3" onclick="select_tab3()">
                                     <!-- Dynamic Tab Names -->
-                                    <h2>Camping</h2>
+                                    <h2 id="recommendation_tab_title3"></h2>
                                     <div class="recommendation_tab_line"></div>
                                 </div>
                             </div>
-                            <div class="recommendation_content">
-                                <div class="recommendation_box">
-                                    <!-- Dynamic Recommendation Text & Img -->
-                                    <div class="recommendation_text">
-                                        <h2>Mt. Abu Trek</h2>
-                                        <h3>Rs. 4000</h3>
-                                    </div>
-                                    <div class="recommendation_image">
-                                        <img src="./Icons/urban_mode_icon.png" alt="recommendation image">
-                                    </div>
-                                </div>
-                                <div class="recommendation_box">
-                                    <!-- Dynamic Recommendation Text & Img -->
-                                    <div class="recommendation_text">
-                                        <h2>Mt. Abu Trek</h2>
-                                        <h3>Rs. 4000</h3>
-                                    </div>
-                                    <div class="recommendation_image">
-                                        <img src="./Icons/urban_mode_icon.png" alt="recommendation image">
-                                    </div>
-                                </div>
+                            <div class="recommendation_content" id="recommendation_content1">
+                            </div>
+                            <div class="recommendation_content recommendation_content_inactive" id="recommendation_content2">
+                            </div>
+                            <div class="recommendation_content recommendation_content_inactive" id="recommendation_content3">
                             </div>
                         </div>
                     </div>
@@ -130,23 +115,12 @@
         </div>
     </div>
 
-    <!-- <div data-role="page" id="rural_mode">
-        <div data-role="content">
-            <div class="header">
-                <div class="header_contents">
-                    <div class="header_title">
-                        <h1>The Rurban Traveller</h1>
-                    </div>
-                    <div class="icon">
-                        <img src="./Icons/rural_mode_icon.png" alt="User">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- Importing Scripts -->
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
     <script src="./JSON/swipe.js"></script>
+    <script src="./JSON/tabs.js"></script>
+    <script type="module" src="./JSON/recommendations.js"></script>
+    <script type="module" src="./JSON/reminders.js"></script>
+    <!-- <script src="./JSON/recommendation_data.js"></script> -->
 </body>

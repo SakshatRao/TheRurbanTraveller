@@ -29,6 +29,10 @@
     padding: 0 20px;
 }
 
+.recommendation_tab h2 {
+    cursor: pointer;
+}
+
 .recommendation_tab_active h2 {
     color: var(--green);
 }
@@ -63,6 +67,12 @@
     padding: 0 20px;
 }
 
+.recommendation_details h3 {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
 .recommendation_image {
     width: 250px;
     height: 250px;
@@ -70,4 +80,8 @@
 
 .recommendation_image img {
     width: 100%;
+}
+
+.recommendation_content_inactive {
+    display: none;
 }
