@@ -7,9 +7,9 @@ recommended_activities = recommend()
 def handle_nans(val, comma = True):
     if(pd.isnull(val)):
         if(comma == True):
-            return '""'
+            return '"_"'
         else:
-            return ""
+            return "_"
     return val
 
 id = 1

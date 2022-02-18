@@ -1,167 +1,147 @@
 
     var recommendations1 = {
-        category: "Trekking",
+        category: "Surfing",
         activities: [
         {
             id: 1,
-            name: "Camping by Tea Gardens Ooty",
-            price: 2199.0,
-            location: "Ooty",
+            name: "Camping and Surfing at Kovalam Chennai - Flat 17% Off",
+            price: 3199.0,
+            location: "Chennai",
             duration: 48.0,
             rating: 5.0,
-            distance: 938.1
+            distance: "_"
         }
         ,
         {
             id: 2,
-            name: "Chidiya Bhadak Waterfall Trek Indore",
-            price: 650.0,
-            location: "Indore",
-            duration: 12.0,
-            rating: 5.0,
-            distance: ""
+            name: "Surfing In Chennai",
+            price: 1149.0,
+            location: "Chennai",
+            duration: 1.0,
+            rating: 4.0,
+            distance: "_"
         }
         ,
         {
             id: 3,
-            name: "Kanchenjunga Base Camp Trek from Darjeeling 2022",
-            price: 14700.0,
-            location: "",
-            duration: 264.0,
-            rating: 5.0,
-            distance: ""
-        }
-        ,
-        {
-            id: 4,
-            name: "Nagalapuram Camping Experience With Waterfall Trek",
-            price: 1850.0,
-            location: "Chennai",
-            duration: 48.0,
+            name: "Surf through Thrilling Waves in Pondicherry",
+            price: 2500.0,
+            location: "Pondicherry",
+            duration: 24.0,
             rating: 4.0,
-            distance: 972.6
-        }
-        ,
-        {
-            id: 5,
-            name: "Laka Glacier Trek with Triund Mcleodganj",
-            price: 3100.0,
-            location: "Mcleodganj",
-            duration: 72.0,
-            rating: 4.0,
-            distance: ""
+            distance: "_"
         }
         ]
     };
     
 
     var recommendations2 = {
-        category: "Rock Climbing",
+        category: "Bungee Jumping",
         activities: [
         {
-            id: 6,
-            name: "Rock Climbing In Hyderabad",
-            price: 1000.0,
-            location: "Hyderabad",
+            id: 4,
+            name: "Kolad River Rafting and Bungee Jumping",
+            price: 1650.0,
+            location: "Kolad",
             duration: 2.0,
             rating: 5.0,
-            distance: 585.5
+            distance: 79.6
+        }
+        ,
+        {
+            id: 5,
+            name: "Bungee Jumping In Mumbai",
+            price: 2250.0,
+            location: "Mumbai",
+            duration: 1.0,
+            rating: 5.0,
+            distance: 79.6
+        }
+        ,
+        {
+            id: 6,
+            name: "Kolad Bungee Jumping",
+            price: 1900.0,
+            location: "Kolad",
+            duration: 1.0,
+            rating: 4.0,
+            distance: 79.6
         }
         ,
         {
             id: 7,
-            name: "Rock Climbing in Jibhi | Flat 20% off",
-            price: 400.0,
-            location: "Jibhi",
-            duration: 3.0,
+            name: "Bungee Jumping In Goa",
+            price: 2699.0,
+            location: "Goa, India",
+            duration: 1.0,
             rating: 5.0,
-            distance: ""
+            distance: "_"
         }
         ,
         {
             id: 8,
-            name: "Adventure Activities Combo in Manali | Flat 17% off",
-            price: 740.0,
-            location: "Manali",
-            duration: 3.0,
-            rating: 5.0,
-            distance: ""
-        }
-        ,
-        {
-            id: 9,
-            name: "Rock Climbing in Mussoorie I Book Now & Save 19%",
-            price: 849.0,
-            location: "Mussoorie",
-            duration: 2.0,
-            rating: 5.0,
-            distance: ""
-        }
-        ,
-        {
-            id: 10,
-            name: "Rock Climbing and Rappelling in Bir | Flat 21% off",
-            price: 590.0,
-            location: "",
-            duration: "",
-            rating: 5.0,
-            distance: ""
+            name: "3 Exciting Adventure Sports in Mohan Chatti village near Rishikesh",
+            price: 1550.0,
+            location: "Rishikesh",
+            duration: 1.0,
+            rating: 4.0,
+            distance: 1342.4
         }
         ]
     };
     
 
     var recommendations3 = {
-        category: "Hiking",
+        category: "Paragliding",
         activities: [
         {
-            id: 11,
-            name: "Nature Trail to Robber’s Cave Flat 28% off",
-            price: 250.0,
-            location: "Dehradun",
+            id: 9,
+            name: "Kamshet Paragliding",
+            price: 2999.0,
+            location: "Kamshet",
+            duration: "_",
+            rating: 4.0,
+            distance: 77.8
+        }
+        ,
+        {
+            id: 10,
+            name: "Paragliding in Barot | Book Online @ Flat 26% off",
+            price: 2200.0,
+            location: "Barot",
             duration: 2.0,
             rating: 5.0,
-            distance: ""
+            distance: "_"
+        }
+        ,
+        {
+            id: 11,
+            name: "Paragliding in Manali",
+            price: 2200.0,
+            location: "Manali",
+            duration: "_",
+            rating: 5.0,
+            distance: "_"
         }
         ,
         {
             id: 12,
-            name: "Jakhoo Hill Trek @ ₹300 Only | Book Online & Save 25%",
-            price: 300.0,
-            location: "Shimla",
-            duration: 4.0,
+            name: "Paragliding and Camping in Bir Billing | Book @ 23% off",
+            price: 3250.0,
+            location: "_",
+            duration: 48.0,
             rating: 5.0,
-            distance: ""
+            distance: "_"
         }
         ,
         {
             id: 13,
-            name: "Hampta Valley Day Hike",
-            price: 715.0,
-            location: "Manali",
-            duration: 7.0,
+            name: "Paragliding in Nainital",
+            price: 1299.0,
+            location: "Bhimtal",
+            duration: "_",
             rating: 5.0,
-            distance: ""
-        }
-        ,
-        {
-            id: 14,
-            name: "Mountain Hike in Wayanad Kerala - Flat 15% Off",
-            price: 1500.0,
-            location: "Wayanad",
-            duration: 7.0,
-            rating: 5.0,
-            distance: ""
-        }
-        ,
-        {
-            id: 15,
-            name: "Jalori Pass Trek",
-            price: 999.0,
-            location: "Shimla",
-            duration: 6.0,
-            rating: 5.0,
-            distance: 1455.0
+            distance: 1324.4
         }
         ]
     };

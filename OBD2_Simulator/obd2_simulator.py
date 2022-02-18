@@ -7,6 +7,7 @@ class OBD2_Simulator:
         self.sim_time = sim_time
         self.speed = np.zeros(self.sim_time)
         self.refuels = []
+        self.weekday_weekend_cnt = 0
         
         self.acc_rates = []
         self.dec_rates = []
@@ -112,12 +113,15 @@ class OBD2_Simulator:
     
     def randomize_trip_times(self):
         
-        # Even number of trips more probable (to-fro)
-        num_trips = np.random.choice([0, 1, 2, 3, 4, 5], p = [1/12, 1/12, 4/12, 2/12, 3/12, 1/12])
+        if(self.weekday_weekend_cnt % 7 >= 5): # Weekend
+            num_trips = np.random.choice([0, 1, 2, 3, 4, 5], p = [1/6, 1/6, 1/6, 1/6, 1/6, 1/6])
+        else: # Weekday
+            # Even number of trips more probable (to-fro)
+            num_trips = np.random.choice([0, 1, 2, 3, 4, 5], p = [1/12, 1/12, 4/12, 2/12, 3/12, 1/12])
         
         self.trip_times = np.zeros(num_trips, dtype = np.int32)
         self.office_trips = np.zeros(num_trips, dtype = bool)
-        if(num_trips >= 2):
+        if((num_trips >= 2) and (self.weekday_weekend_cnt % 7 < 5)): # Weekday
             self.trip_times[0] = int(np.random.normal(9 * 60, 1 * 60))
             self.office_trips[0] = True
             self.trip_times[1] = int(np.random.normal(17 * 60, 1 * 60))
@@ -128,9 +132,17 @@ class OBD2_Simulator:
                 for trip_idx, trip_time in enumerate(remaining_trip_times):
                     self.trip_times[2 + trip_idx] = int(trip_time)
                     self.office_trips[2 + trip_idx] = False
+        elif((num_trips >= 2) and (self.weekday_weekend_cnt % 7 >= 5)): # Weekend
+            remaining_trip_times = np.random.uniform(18 * 60, 22 * 60, num_trips)
+            remaining_trip_times = np.sort(remaining_trip_times)
+            for trip_idx, trip_time in enumerate(remaining_trip_times):
+                self.trip_times[trip_idx] = int(trip_time)
+                self.office_trips[trip_idx] = False
         elif(num_trips == 1):
             self.trip_times[0] = int(np.random.uniform(8, 22))
             self.office_trips[0] = False
+        
+        self.weekday_weekend_cnt = (self.weekday_weekend_cnt + 1) % 7
     
     def simulate_speed(self, seed):
         np.random.seed(seed)
