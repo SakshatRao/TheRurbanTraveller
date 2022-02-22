@@ -176,10 +176,8 @@ SEED = np.random.randint(0, 1000)
 print(f"Seed - {SEED}")
 
 for sim_iter in np.arange(NUM_SIMS):
-    sim_success = False
-    modifier = 0
     print(f"Starting iteration {sim_iter + 1}")
-    obd2_sim.simulate_speed(SEED + sim_iter + modifier)
+    obd2_sim.simulate_speed(SEED + sim_iter)
     speed_data[sim_iter, :] = obd2_sim.speed
     fuel_data.extend([(x + 24 * 60 * sim_iter) / (24 * 60) for x in obd2_sim.refuels])
 

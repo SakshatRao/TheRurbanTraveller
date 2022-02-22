@@ -1,6 +1,6 @@
 var reminder = {
     remind: 1,
-    time: "9:30 AM"
+    time: "8:30 AM"
 };
 
 export { reminder };
