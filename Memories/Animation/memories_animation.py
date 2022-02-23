@@ -21,7 +21,7 @@ def create_animation_window():
  
 def create_animation_canvas(Window):
     canvas = tkinter.Canvas(Window)
-    canvas.configure(bg = "black")
+    canvas.configure(bg = "white")
     canvas.pack(fill = "both", expand = True)
     return canvas
 
@@ -33,13 +33,19 @@ def scale_yaxis(y):
  
 def animate_car(Window, canvas, memories_dict):
     iter_cnt = 0
-    bg_img_file = ImageTk.PhotoImage(Image.open("./Memories/Animation/Images/map.jpg").resize((1000, 800)))
-    bg_img = canvas.create_image(750, 400, anchor = tkinter.CENTER, image = bg_img_file)
+    # bg_img_file = ImageTk.PhotoImage(Image.open("./Memories/Animation/Images/map.jpg").resize((1000, 800)))
+    # bg_img = canvas.create_image(750, 400, anchor = tkinter.CENTER, image = bg_img_file)
     memory = memories_dict[f"Phase{iter_cnt}"]
     next_memory = memories_dict[f"Phase{iter_cnt + 1}"]
-    car_file = tkinter.PhotoImage(file = "./Memories/Animation/Images/pickup-truck.png")
-    car_file = car_file.subsample(5)
-    car = canvas.create_image(scale_xaxis(memory['gps'][1]), scale_yaxis(memory['gps'][0]), anchor = tkinter.CENTER, image = car_file)
+    car_file_se = tkinter.PhotoImage(file = "./Memories/Animation/Images/pickup-truck_SE.png")
+    car_file_se = car_file_se.subsample(5)
+    car_file_sw = tkinter.PhotoImage(file = "./Memories/Animation/Images/pickup-truck_SW.png")
+    car_file_sw = car_file_sw.subsample(5)
+    car_file_ne = tkinter.PhotoImage(file = "./Memories/Animation/Images/pickup-truck_NE.png")
+    car_file_ne = car_file_ne.subsample(5)
+    car_file_nw = tkinter.PhotoImage(file = "./Memories/Animation/Images/pickup-truck_NW.png")
+    car_file_nw = car_file_nw.subsample(5)
+    car = canvas.create_image(scale_xaxis(memory['gps'][1]), scale_yaxis(memory['gps'][0]), anchor = tkinter.CENTER, image = car_file_se)
     status_label = canvas.create_text(750, 20, text = "", fill = 'black')
     curr_time = datetime.datetime(2022, 1, 14, 0, 0, 0)
     time_label = canvas.create_text(750, 40, text = datetime.datetime.strftime(curr_time, "%b %d, %Y (%a) - %I:%M %p"), fill = 'black')
@@ -52,6 +58,14 @@ def animate_car(Window, canvas, memories_dict):
         time.sleep(0.25)
         delta_y = scale_yaxis(next_memory['gps'][0]) - scale_yaxis(memory['gps'][0])
         delta_x = scale_xaxis(next_memory['gps'][1]) - scale_xaxis(memory['gps'][1])
+        if((delta_x > 0) and (delta_y > 0)):
+            canvas.itemconfig(car, image = car_file_se)
+        elif((delta_x < 0) and (delta_y > 0)):
+            canvas.itemconfig(car, image = car_file_sw)
+        elif((delta_x > 0) and (delta_y < 0)):
+            canvas.itemconfig(car, image = car_file_ne)
+        elif((delta_x < 0) and (delta_y < 0)):
+            canvas.itemconfig(car, image = car_file_nw)
         canvas.move(car, delta_x, delta_y)
 
         update_text = ""
