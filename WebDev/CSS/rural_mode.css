@@ -85,3 +85,35 @@
 .recommendation_content_inactive {
     display: none;
 }
+
+.memories {
+    width: 90%;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.memories_box {
+    background-color: var(--light_grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    /* border: 5px solid var(--green); */
+}
+
+.memories_title {
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.memories_button {
+    width: 90%;
+    background-color: var(--green);
+    padding: 20px 0px;
+}
+
+.memories_button {
+    cursor: pointer;
+    color: white;
+    font-size: 3em;
+}

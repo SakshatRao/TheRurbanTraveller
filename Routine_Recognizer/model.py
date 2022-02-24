@@ -33,13 +33,13 @@ forecast = np.expand_dims(forecast, 1)
 forecast_dates = pd.date_range(speed_timeseries_df.index[speed_timeseries_df.shape[0] - 1], freq = '1min', periods = 24 * 60)
 forecast_timeseries_df = pd.DataFrame(forecast, index = forecast_dates, columns = ['speed']).reset_index(drop = False)
 
-office_forecast_df = forecast_timeseries_df.iloc[:12 * 60]
+office_forecast_df = forecast_timeseries_df.iloc[1 * 60: 12 * 60]
 max_speed = office_forecast_df['speed'].max()
 forecasted_office_time = office_forecast_df[office_forecast_df['speed'] == max_speed].iloc[0]['index']
 print(f"Forecasted Office Time: {forecasted_office_time}")
 
-sns.lineplot(x = 'index', y = 'speed', data = forecast_timeseries_df)
-plt.show()
+# sns.lineplot(x = 'index', y = 'speed', data = forecast_timeseries_df)
+# plt.show()
 
 remind_data_text1 = '''
 var reminder = {

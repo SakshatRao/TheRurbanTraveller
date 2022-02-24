@@ -87,7 +87,7 @@ class Memories_Simulator:
             self.add_acc_cruise_dec(trip_time, acc_rate, dec_rate, top_speed, cruise_minute)
         self.add_random_traffic()
 
-NUM_SIMS = np.random.choice([1, 2, 3, 4, 5], p = [1/9, 2/9, 3/9, 2/9, 1/9])
+NUM_SIMS = np.random.choice([2, 3, 4, 5], p = [2/8, 2/8, 2/8, 2/8])
 print(f"NUM_DAYS - {NUM_SIMS}")
 speed_data = np.zeros((NUM_SIMS, 24 * 60))
 mem_sim = Memories_Simulator()
