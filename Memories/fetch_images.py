@@ -5,7 +5,6 @@ from urllib.request import urlretrieve
 import signal
 
 def handler(signum, frame):
-    print("Forever is over!")
     raise Exception("end of time")
 
 # Welcome message

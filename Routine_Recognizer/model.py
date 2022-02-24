@@ -38,8 +38,8 @@ max_speed = office_forecast_df['speed'].max()
 forecasted_office_time = office_forecast_df[office_forecast_df['speed'] == max_speed].iloc[0]['index']
 print(f"Forecasted Office Time: {forecasted_office_time}")
 
-# sns.lineplot(x = 'index', y = 'speed', data = forecast_timeseries_df)
-# plt.show()
+sns.lineplot(x = 'index', y = 'speed', data = forecast_timeseries_df)
+plt.show()
 
 remind_data_text1 = '''
 var reminder = {
