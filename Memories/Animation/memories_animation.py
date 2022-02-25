@@ -106,6 +106,8 @@ def animate_car(Window, canvas, memories_dict, win):
     np.random.shuffle(img_pos)
     img_pos_idx = 0
 
+    loc_names = set()
+
     Window.update()
     curr_img = None
     while True:
@@ -146,8 +148,10 @@ def animate_car(Window, canvas, memories_dict, win):
             update_text = f"Travelling from {start_loc} to {end_loc}"
         else:
             update_text = f"Stop at {memory['city']}"
-            city_name = canvas.create_text(scale_xaxis(memory['gps'][1]), scale_yaxis(memory['gps'][0]), text = memory['city'], anchor = tkinter.CENTER, fill = 'red', font = ("Arial", 25))
-            city_names.append(city_name)
+            if(memory['city'] not in loc_names):
+                city_name = canvas.create_text(scale_xaxis(memory['gps'][1]), scale_yaxis(memory['gps'][0]), text = memory['city'], anchor = tkinter.CENTER, fill = 'red', font = ("Arial", 25))
+                city_names.append(city_name)
+                loc_names.add(memory['city'])
         curr_time = curr_time + datetime.timedelta(minutes = 30)
         canvas.itemconfig(time_label, text = datetime.datetime.strftime(curr_time, "%b %d, %Y (%a) - %I:%M %p"))
         canvas.itemconfig(status_label, text = update_text)
@@ -176,12 +180,12 @@ def animate_car(Window, canvas, memories_dict, win):
             break
         memory = memories_dict[f"Phase{iter_cnt}"]
         next_memory = memories_dict[f"Phase{iter_cnt + 1}"]
-    # time.sleep(5)
-    # t.terminate()
+    time.sleep(5)
+    t.terminate()
 
-# wav_file = AudioSegment.from_file(file = "./Memories/Animation/bg_music.mp3", format = "mp3")
-# t = multiprocessing.Process(target = play, args = (wav_file, ))
-# t.start()
+wav_file = AudioSegment.from_file(file = "./Memories/Animation/bg_music.mp3", format = "mp3")
+t = multiprocessing.Process(target = play, args = (wav_file, ))
+t.start()
 win = Animation_Window = create_animation_window()
 Animation_canvas = create_animation_canvas(Animation_Window)
 animate_car(Animation_Window, Animation_canvas, memories_dict, win)
