@@ -7,12 +7,14 @@
     <!-- <meta http-equiv="refresh" content="10"> -->
 
     <!-- Importing CSS files -->
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="./CSS/jquery.mobile-1.4.2.min.css" /> 
     <link rel="stylesheet" type="text/css" href="./CSS/header.css">
     <link rel="stylesheet" type="text/css" href="./CSS/colors.css">
     <link rel="stylesheet" type="text/css" href="./CSS/body.css">
     <link rel="stylesheet" type="text/css" href="./CSS/urban_mode.css">
     <link rel="stylesheet" type="text/css" href="./CSS/rural_mode.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/userpage.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/content.css">
 </head>
 <body>
     <div data-role="page" id="urban_mode">
@@ -20,9 +22,11 @@
             <div class="header">
                 <div class="header_contents">
                     <div class="icon">
-                        <span class="icon_circle">
-                            <img src="./Icons/user.png" alt="User">
-                        </span>
+                        <a href="./userpage.html">
+                            <span class="icon_circle">
+                                <img src="./Icons/user.png" alt="User">
+                            </span>
+                        </a>
                     </div>
                     <div class="header_title">
                         <h1>The Rurban Traveller</h1>
@@ -34,6 +38,16 @@
                     <h1>Routine Mode</h1>
                 </div>
                 <div class="features">
+                    <div class="capture" id="capture_div">
+                        <div class="capture_box">
+                            <div class="capture_button">
+                                <a href="#">
+                                    <h3>Quick, take a picture!</h3>
+                                </a>
+                            </div>
+                            <h2 class="capture_text">It is time for -<br>ISUZU CAPTURE OF THE DAY!</h2>
+                        </div>
+                    </div>
                     <div class="reminder" id="reminder_div">
                         <div class="reminder_box">
                             <div class="reminder_button">
@@ -46,14 +60,23 @@
                             </h2>
                         </div>
                     </div>
-                    <div class="traffic">
-                        <!-- Dynamic Traffic Update -->
+                    <div class="fuel" id="fuel_div">
+                        <div class="fuel_box">
+                            <div class="fuel_button">
+                                <a href="#">
+                                    <h3>Check nearest fuel station</h3>
+                                </a>
+                            </div>
+                            <!-- Dynamic Reminder Text -->
+                            <h2 class="fuel_text" id="fuel_text"></h2>
+                        </div>
                     </div>
-                    <div class="car_usage_stats">
-                        <!-- Dynamic Car Usage Stats -->
-                    </div>
-                    <div class="fuel_alert">
-                        <!-- Dynamic Fuel Alert -->
+                    <div class="analysis">
+                        <div class="analysis_button">
+                            <a href="./Plotly/sample.html">
+                                <h3>Car Usage Analysis</h3>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -68,9 +91,11 @@
                         <h1>The Rurban Traveller</h1>
                     </div>
                     <div class="icon">
-                        <span class="icon_circle">
-                            <img src="./Icons/user.png" alt="User">
-                        </span>
+                        <a href="./userpage.html">
+                            <span class="icon_circle">
+                                <img src="./Icons/user.png" alt="User">
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -79,6 +104,16 @@
                     <h1>Adventure Mode</h1>
                 </div>
                 <div class="features">
+                    <div class="capture" id="capture_div2">
+                        <div class="capture_box">
+                            <div class="capture_button">
+                                <a href="#">
+                                    <h3>Quick, take a picture!</h3>
+                                </a>
+                            </div>
+                            <h2 class="capture_text">It is time for -<br>ISUZU CAPTURE OF THE DAY!</h2>
+                        </div>
+                    </div>
                     <div class="recommendations">
                         <div class="recommendations_box">
                             <h1 class="recommendations_title">Explore More!</h1>
@@ -125,6 +160,9 @@
     <script src="./JSON/tabs.js"></script>
     <script type="module" src="./JSON/recommendations.js"></script>
     <script type="module" src="./JSON/reminders.js"></script>
+    <script type="module" src="./JSON/capture.js"></script>
+    <script type="module" src="./JSON/adventure_points.js"></script>
+    <script type="module" src="./JSON/fuel.js"></script>
     <script src="./JSON/memories.js"></script>
     <!-- <script src="./JSON/recommendation_data.js"></script> -->
 </body>

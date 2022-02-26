@@ -31,3 +31,36 @@
     justify-content: center;
     align-items: center;
 }
+
+.capture {
+    padding: 2px 25px;
+    width: 90%;
+    display: inline;
+    margin: 0 0 50px 0;
+}
+
+.capture_box {
+    background-color: orange;
+    text-align: center;
+    /* border: 5px solid black; */
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 30px 10px;
+}
+
+.capture_text {
+    color: black;
+    padding: 0 20px;
+}
+
+.capture_button {
+    background-color: red;
+    border-radius: 15px;
+    padding: 0 20px;
+}
+
+.capture_button a:link {
+    color: white;
+}

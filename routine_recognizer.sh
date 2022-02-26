@@ -6,5 +6,6 @@ do
 done
 # /home/sakshat/anaconda3/envs/TheRurbanTraveller_Python/bin/python /home/sakshat/Documents/TheRurbanTraveller/OBD2_Simulator/sim_plot.py
 /home/sakshat/anaconda3/envs/TheRurbanTraveller_Python/bin/python /home/sakshat/Documents/TheRurbanTraveller/Routine_Recognizer/model.py
+/home/sakshat/anaconda3/envs/TheRurbanTraveller_Python/bin/python /home/sakshat/Documents/TheRurbanTraveller/WebDev/Plotly/graphs.py
 
 # /home/sakshat/anaconda3/envs/TheRurbanTraveller_Python/bin/python /home/sakshat/Documents/TheRurbanTraveller/Memories/Animation/memories_animation.py

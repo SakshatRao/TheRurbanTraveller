@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+h1 {
+    font-size: 6em;
+    text-shadow: none;
+}
+
+h2 {
+    font-size: 3em;
+    text-shadow: none;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 2em;
+    text-shadow: none;
+    font-weight: normal;
+}
+
+.user_page {
+    height: 1743px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    /* background-color: var(--blue_background); */
+    background-image: linear-gradient(to bottom right, var(--blue_background), var(--green_background));
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.isuzu_logo {
+    width: 80%;
+}
+
+.isuzu_logo img {
+    width: 100%;
+}
+
+.adventure_points_box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    margin: 15px;
+    padding: 10px;
+}
+
+.adventure_points_box h2 {
+    padding: 0 50px;
+}
+
+.adventure_points_box h3 {
+    padding: 0 50px;
+    margin: 50px 0 0 0;
+}
+
+.store_button {
+    background-color: var(--dark_blue_background);
+    border-radius: 15px;
+    padding: 0 20px;
+    margin: 50px 0 0 0;
+    width: 50%;
+}
+
+.store_button a h3 {
+    margin: 0;
+    padding: 20px;
+    color: white;
+}
+
+.back_button {
+    background-color: var(--dark_blue_background);
+    border-radius: 15px;
+    padding: 0 20px;
+    margin: 50px 0 50px 0;
+    width: 50%;
+}
+
+.back_button a h3 {
+    margin: 0;
+    padding: 20px;
+    color: white;
+}
+
+.back_button a:link {
+    text-decoration: none;
+}

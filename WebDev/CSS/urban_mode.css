@@ -28,4 +28,66 @@
 
 .reminder_button a:link {
     color: white;
+    text-decoration: none;
+}
+
+.fuel {
+    padding: 2px 25px;
+    width: 90%;
+    display: inline;
+    margin: 20px 0 0 0;
+}
+
+.fuel_box {
+    background-color: var(--dark_grey);
+    text-align: center;
+    /* border: 5px solid black; */
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 30px 10px;
+}
+
+.fuel_text {
+    color: orangered;
+    padding: 0 20px;
+}
+
+.fuel_button {
+    background-color: orangered;
+    border-radius: 15px;
+    padding: 0 20px;
+}
+
+.fuel_button a:link {
+    color: white;
+    text-decoration: none;
+}
+
+.analysis {
+    padding: 2px 25px;
+    width: 90%;
+    display: inline;
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.analysis_button {
+    background-color: var(--dark_blue_background);
+    border-radius: 15px;
+    padding: 10px 20px;
+    width: 50%;
+    text-align: center;
+}
+
+.analysis_button a h3 {
+    color: white;
+}
+
+.analysis_button a:link {
+    color: white;
+    text-decoration: none;
 }

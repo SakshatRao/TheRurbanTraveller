@@ -180,12 +180,12 @@ def animate_car(Window, canvas, memories_dict, win):
             break
         memory = memories_dict[f"Phase{iter_cnt}"]
         next_memory = memories_dict[f"Phase{iter_cnt + 1}"]
-    time.sleep(5)
-    t.terminate()
+    # time.sleep(5)
+    # t.terminate()
 
-wav_file = AudioSegment.from_file(file = "./Memories/Animation/bg_music.mp3", format = "mp3")
-t = multiprocessing.Process(target = play, args = (wav_file, ))
-t.start()
+# wav_file = AudioSegment.from_file(file = "./Memories/Animation/bg_music.mp3", format = "mp3")
+# t = multiprocessing.Process(target = play, args = (wav_file, ))
+# t.start()
 win = Animation_Window = create_animation_window()
 Animation_canvas = create_animation_canvas(Animation_Window)
 animate_car(Animation_Window, Animation_canvas, memories_dict, win)

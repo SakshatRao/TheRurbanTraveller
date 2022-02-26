@@ -30,6 +30,11 @@
     background-color: var(--dark_green_background);
 }
 
+.icon_circle a {
+    width: 100%;
+    height: 100%;
+}
+
 .icon_circle img {
     width: 50%;
 }
